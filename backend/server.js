@@ -42,12 +42,16 @@ mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
 
 // TODO: Update controllers/routes to your resources
 // CONTROLLERS/ROUTES
-const contactsController = require('./controllers/lobby_controller.js')
-app.use('/lobby', contactsController)
+// app.get('/ping', (req, res) => {
+//   res.json({ message: "ok" })
+// })
 
-app.get('/*', (req, res) => {
-  res.redirect('/contacts')
-})
+const lobbyController = require('./controllers/lobby_controller.js')
+app.use('/lobby', lobbyController)
+
+const suggestionController = require('./controllers/suggestion_controller.js')
+app.use('/suggestion', suggestionController)
+
 
 // LISTEN
 app.listen(PORT, () => {

@@ -4,9 +4,9 @@ const User = require('./user.js')
 const suggestionSchema = new mongoose.Schema(
   {
     description: String,
-    votes: {},
-    user: mongoose.ObjectId
-  }
+    // votes: {},
+    user: User.schema
+  },
   { timestamps: true }
 )
 
