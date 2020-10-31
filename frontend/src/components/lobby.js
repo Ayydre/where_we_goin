@@ -20,7 +20,7 @@ class Lobby extends React.Component {
       return null
     } else {
       return (
-        <div>
+        <div className="lobby">
           <LinkForm></LinkForm>
           <h1>{Store.lobby.title}</h1>
           <ul>
