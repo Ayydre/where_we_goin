@@ -34,11 +34,13 @@ class LinkForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={this.addSuggestion}>
-        <input type="text" onChange={this.createNewName} placeholder="Name" /> <br />
-        <input type="text" onChange={this.createNewSuggestion} placeholder="Suggestion" /> <br />
-        <input type="submit" value="Add Suggestion" />
-      </form>
+      <div className="link-form">
+        <form onSubmit={this.addSuggestion}>
+          <input type="text" onChange={this.createNewName} placeholder="Name" /> <br />
+          <input type="text" onChange={this.createNewSuggestion} placeholder="Suggestion" /> <br />
+          <input type="submit" value="Add Suggestion" />
+        </form>
+      </div>
     )
   }
 }

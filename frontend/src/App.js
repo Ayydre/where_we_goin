@@ -5,6 +5,7 @@ import Footer from './components/footer.js'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './styles/App.css';
 import './styles/LandingPage.css';
+import './styles/Lobby.css';
 
 class App extends React.Component {
 
