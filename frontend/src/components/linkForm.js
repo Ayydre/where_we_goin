@@ -36,9 +36,17 @@ class LinkForm extends React.Component {
     return (
       <div className="link-form">
         <form onSubmit={this.addSuggestion}>
-          <input type="text" onChange={this.createNewName} placeholder="Name" /> <br />
-          <input type="text" onChange={this.createNewSuggestion} placeholder="Suggestion" /> <br />
-          <input type="submit" value="Add Suggestion" />
+          <div className="lobbyform-title-area">
+            <span className="lobbyform-title">Complete the form to</span><br/>
+            <span className="lobbyform-title"> add a suggestion</span><br/>
+          </div>
+            <label className="form-label" htmlFor="formName">NAME*</label><br/>
+            <input className="form-input" type="text" onChange={this.createNewName} id="formName" /><br/>
+            <label className="form-label" htmlFor="formSuggestion">SUGGESTION*</label><br/>
+            <input className="form-input" type="text" onChange={this.createNewSuggestion} id="formSuggestion" /> <br />
+          <div>
+            <input className="add-sugg" type="submit" value="Add Suggestion" />
+          </div>
         </form>
       </div>
     )
