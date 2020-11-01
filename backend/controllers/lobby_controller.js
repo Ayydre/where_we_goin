@@ -11,7 +11,7 @@ lobby.post('/', async(req, res) => {
     let suggestion = await Suggestion.create({description: req.body.suggestion, user: user})
     let lobby = await Lobby.create({
       title: req.body.title,
-      numSuggestions: req.body.numSuggestions,
+      // numSuggestions: req.body.numSuggestions,
       type: req.body.type,
       suggestions: [suggestion],
       users: [user],

@@ -5,7 +5,7 @@ const User = require('./user.js')
 const lobbySchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
-    numSuggestions: { type: Number, max: 3},
+    // numSuggestions: { type: Number, max: 3},
     type: { type: String, required: true },
     suggestions: [Suggestion.schema],
     users: [User.schema],
