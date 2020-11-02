@@ -11,7 +11,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const app = express()
 const PORT = process.env.PORT
-const MONGODB_URI = process.env.MONGODB_URI || 8080
+const MONGODB_URI = process.env.MONGODB_URI
 
 // MIDDLEWARE
 app.use(express.json()) // use .json(), not .urlencoded()
