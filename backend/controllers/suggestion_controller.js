@@ -15,12 +15,11 @@ suggestion.post('/:id', async(req, res) => {
   }
 })
 
-suggestion.patch('/suggestions/:id', async(req, res) => {
+suggestion.put('/suggestions/:id', async(req, res) => {
   try {
     let suggestion = await Suggestion.findByIdAndUpdate(req.params.id, {$inc: {votes: +1}})
-    let lobby = await Lobby.findByIdAndUpdate(req.body.lobbyId, { $set: {suggestions: suggestion}}, {new: true})
     console.log(suggestion);
-    console.log(lobby);
+    let lobby = await Lobby.findByIdAndUpdate(req.body.lobbyId, { $set: {suggestions: suggestion}}, {new: true})
     res.json(lobby)
   } catch (e){
     console.log("error message", e.message);

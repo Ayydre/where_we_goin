@@ -22,14 +22,13 @@ class Lobby extends React.Component {
   }
 
   onVoteUp = (event) => {
-    console.log(event.target.id);
-    axios.patch('/suggestion/suggestions/' + event.target.id, 
+    // console.log(event.target.id);
+    axios.put('/suggestion/suggestions/' + event.target.id, 
       {
         lobbyId: Store.lobby._id
       })
       .then(
         (response) => {
-          console.log("vote info", response.data );
           Store.lobby = response.data
       }
     )
