@@ -52,6 +52,9 @@ app.use('/lobby', lobbyController)
 const suggestionController = require('./controllers/suggestion_controller.js')
 app.use('/suggestion', suggestionController)
 
+if (process.env.NODE_ENV === 'production') {
+  
+}
 
 // LISTEN
 app.listen(PORT, () => {
