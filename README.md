@@ -8,9 +8,9 @@ This app helps you and your friends decide on a place to go or eat. The user can
 
 
 ### Technologies used
-*React
-*Node.js
-*MongoDB Atlas
-*Express.js
-*MobX
-*Bootstrap
+**React
+**Node.js
+**MongoDB Atlas
+**Express.js
+**MobX
+**Bootstrap
