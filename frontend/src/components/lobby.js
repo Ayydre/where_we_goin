@@ -23,15 +23,18 @@ class Lobby extends React.Component {
 
   onVoteUp = (event) => {
     // console.log(event.target.id);
-    axios.put('/suggestion/suggestions/' + event.target.id, 
+    for (let key in Store.lobby.suggestions) {
+      console.log(Store.lobby.suggestions[key]);
+      axios.put('/suggestion/suggestions/' + event.target.id, 
       {
+        votes: Store.lobby.suggestions[key].votes += 1,
         lobbyId: Store.lobby._id
       })
       .then(
         (response) => {
           Store.lobby = response.data
-      }
-    )
+      })
+    }
   }
 
   copyToClipboard = (e) => {
@@ -95,7 +98,7 @@ class Lobby extends React.Component {
                       </button>
                     </div>
                     <div className="modal-body">
-                      <input type="text" className="sharelink" id="sharelink" defaultValue={`http://whereto.herokuapp.com/lobby/${this.props.match.params.id}`}/>
+                      <input type="text" className="sharelink" id="sharelink" defaultValue={`http://whereto-app.herokuapp.com/lobby/${this.props.match.params.id}`}/>
                     </div>
                     <div className="modal-footer">
                       <button type="button" className="btn copy-button" onClick={this.copyToClipboard}>{this.state.btnText}</button>

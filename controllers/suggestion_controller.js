@@ -17,7 +17,7 @@ suggestion.post('/:id', async(req, res) => {
 
 suggestion.put('/suggestions/:id', async(req, res) => {
   try {
-    let suggestion = await Suggestion.findByIdAndUpdate(req.params.id, {$inc: {votes: +1}})
+    let suggestion = await Suggestion.findByIdAndUpdate(req.params.id, {votes: req.body.votes}, {new: true})
     console.log(suggestion);
     let lobby = await Lobby.findByIdAndUpdate(req.body.lobbyId, { $set: {suggestions: suggestion}}, {new: true})
     res.json(lobby)
