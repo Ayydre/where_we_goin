@@ -11,7 +11,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const app = express()
 const PORT = process.env.PORT
-const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_URI = process.env.MONGODB_URI || 8080
 
 // MIDDLEWARE
 app.use(express.json()) // use .json(), not .urlencoded()
@@ -53,7 +53,7 @@ const suggestionController = require('./controllers/suggestion_controller.js')
 app.use('/suggestion', suggestionController)
 
 if (process.env.NODE_ENV === 'production') {
-  
+ app.use(express.static('frontend/build'))
 }
 
 // LISTEN
